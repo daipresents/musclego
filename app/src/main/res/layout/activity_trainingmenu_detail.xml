@@ -65,12 +65,12 @@
                 android:layout_below="@+id/exercises"
                 android:layout_alignParentRight="false" />
 
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/exercise1"
-                android:spinnerMode="dialog" />
+                android:layout_weight="1" />
+
 
         </LinearLayout>
 
@@ -90,12 +90,11 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
 
-            <Spinner
+            <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/exercise2"
-                android:layout_weight="1"
-                android:spinnerMode="dialog" />
+                android:layout_weight="1" />
 
         </LinearLayout>
 
@@ -115,12 +114,11 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
 
-            <Spinner
+            <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/exercise3"
-                android:layout_weight="1"
-                android:spinnerMode="dialog" />
+                android:layout_weight="1" />
 
         </LinearLayout>
 
