@@ -19,7 +19,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".trainingmenu.TrainingmenuDetailActivity" />
-        <activity android:name=".trainingmenu.TrainingmenuSelectActivity"></activity>
     </application>
 
 </manifest>
