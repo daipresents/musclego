@@ -4,6 +4,5 @@
 
     <!-- トレーニングメニュー詳細 -->
     <string name="trainingmenu_detail_menu_name">トレーニングメニュー名</string>
-    <string name="trainingmenu_detail_menu">トレーニングメニュー</string>
     <string name="trainingmenu_detail_save">保存</string>
 </resources>
