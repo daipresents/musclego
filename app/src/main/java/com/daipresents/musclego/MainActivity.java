@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.daipresents.musclego.trainingmenu.TrainingmenuDetailActivity;
+import com.daipresents.musclego.settings.TrainingMenuDetailActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
-                Intent intent = new Intent(mainActivity, TrainingmenuDetailActivity.class);
+                Intent intent = new Intent(mainActivity, TrainingMenuDetailActivity.class);
                 startActivity(intent);
             }
         });

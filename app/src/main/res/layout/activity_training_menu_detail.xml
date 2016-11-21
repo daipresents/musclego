@@ -38,42 +38,33 @@
             android:layout_alignParentStart="true" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/trainingmenu_detail_menu"
-            android:id="@+id/exercises"
-            android:layout_below="@+id/trainingMenuName"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/label_chest"/>
+            android:text="@string/ex_label_chest"/>
 
         <CheckBox
-            android:id="@+id/barbell_bench_press"
+            android:id="@+id/ex_bench_press_barbell"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/barbell_bench_press"/>
+            android:text="@string/ex_bench_press_barbell"/>
 
         <CheckBox
-            android:id="@+id/incline_bench_press"
+            android:id="@+id/ex_bench_press_incline"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/incline_bench_press"/>
+            android:text="@string/ex_bench_press_incline"/>
 
         <CheckBox
-            android:id="@+id/decline_bench_press"
+            android:id="@+id/ex_bench_press_decline"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/decline_bench_press"/>
+            android:text="@string/ex_bench_press_decline"/>
 
         <Button
+            android:id="@+id/saveExercise"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:text="@string/trainingmenu_detail_save"
-            android:id="@+id/saveExercise" />
+            android:text="@string/trainingmenu_detail_save"/>
     </LinearLayout>
 </ScrollView>
 
