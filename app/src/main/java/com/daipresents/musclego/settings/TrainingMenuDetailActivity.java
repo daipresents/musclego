@@ -43,59 +43,63 @@ public class TrainingMenuDetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(activity, "save", Toast.LENGTH_SHORT).show();
 
-                SharedPreferences sp = getSharedPreferences("com.daipresents.musclego", MODE_PRIVATE);
-                String trainingmenuList = sp.getString("trainingMenuList", "");
+                JSONObject trainingMenuJSON = createJSON();
 
-                JSONObject trainingMenuJson = new JSONObject();
-                JSONArray exercisesJson = new JSONArray();
-
-                if ("".equals(trainingmenuList)){
-                    Log.v(THIS_CLASS_NAME, "Save training menu for the first time.");
-
-                    // TrainingMenuName
-                    EditText trainingMenuName = (EditText) findViewById(R.id.trainingMenuName);
-
-                    // Exercises
-                    // TODO 一気に全部のCheckBoxを取得できないものか
-                    StringBuffer trainingMenu = new StringBuffer();
-
-                    CheckBox exBenchPressBarbell = (CheckBox) findViewById(R.id.ex_bench_press_barbell);
-                    if (exBenchPressBarbell.isChecked()) {
-                        exercisesJson.put(R.string.ex_bench_press_barbell);
-                    }
-
-                    CheckBox exBenchPressIncline = (CheckBox) findViewById(R.id.ex_bench_press_incline);
-                    if (exBenchPressIncline.isChecked()){
-                        exercisesJson.put(R.string.ex_bench_press_incline);
-                    }
-
-                    CheckBox exBenchPressDecline = (CheckBox) findViewById(R.id.ex_bench_press_decline);
-                    if (exBenchPressDecline.isChecked() ){
-                        exercisesJson.put(R.string.ex_bench_press_decline);
-                    }
-
-                    try {
-                        trainingMenuJson.put("trainingName", trainingMenuName.getText());
-                        trainingMenuJson.put("exercises", exercisesJson);
-
-                        Log.v(THIS_CLASS_NAME, trainingMenuJson.toString());
-
-                    } catch (JSONException e){
-                        Log.v(THIS_CLASS_NAME, "JSONException occurred at new training data creation: " + e.getMessage());
-                    }
-
-
-                } else {
-                    Log.v(THIS_CLASS_NAME, "Update training menu.");
-
+                if (trainingMenuJSON != null) {
+                    saveJSON(trainingMenuJSON);
                 }
-
-
-//                SharedPreferences.Editor editor = sp.edit();
-//                editor.putString("name", name);
-//                editor.putInt("age", age);
-//                editor.commit();
             }
         });
+    }
+
+    private JSONObject createJSON(){
+
+        JSONObject trainingMenuJSON = new JSONObject();
+        JSONArray exercisesJSON = new JSONArray();
+
+        // TrainingMenuName
+        EditText trainingMenuName = (EditText) findViewById(R.id.trainingMenuName);
+
+        // Exercises
+        // TODO 一気に全部のCheckBoxを取得できないものか
+        StringBuffer trainingMenu = new StringBuffer();
+
+        CheckBox exBenchPressBarbell = (CheckBox) findViewById(R.id.ex_bench_press_barbell);
+        if (exBenchPressBarbell.isChecked()) {
+            exercisesJSON.put(getString(R.string.ex_bench_press_barbell));
+        }
+
+        CheckBox exBenchPressIncline = (CheckBox) findViewById(R.id.ex_bench_press_incline);
+        if (exBenchPressIncline.isChecked()){
+            exercisesJSON.put(getString(R.string.ex_bench_press_incline));
+        }
+
+        CheckBox exBenchPressDecline = (CheckBox) findViewById(R.id.ex_bench_press_decline);
+        if (exBenchPressDecline.isChecked() ){
+            exercisesJSON.put(getString(R.string.ex_bench_press_barbell));
+        }
+
+        try {
+            trainingMenuJSON.put("trainingName", trainingMenuName.getText());
+            trainingMenuJSON.put("exercises", exercisesJSON);
+
+            Log.v(THIS_CLASS_NAME, trainingMenuJSON.toString());
+
+            return trainingMenuJSON;
+
+        } catch (JSONException e){
+            Log.v(THIS_CLASS_NAME, "JSONException occurred at new training data creation: " + e.getMessage());
+            return null;
+        }
+
+    }
+
+    private void saveJSON (JSONObject trainingMenuJSON){
+        SharedPreferences sp = getSharedPreferences("com.daipresents.musclego", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("trainingMenu", trainingMenuJSON.toString());
+        editor.commit();
+
+        Log.v(THIS_CLASS_NAME, "Saved data is " + sp.getString("trainingMenu", "No data."));
     }
 }
