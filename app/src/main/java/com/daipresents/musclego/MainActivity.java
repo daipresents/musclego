@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 import com.daipresents.musclego.settings.TrainingMenuDetailActivity;
 
@@ -32,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
+
+            }
+        });
+
+        Button createUpdateTrainingButton = (Button) findViewById(R.id.create_update_training_menu_button);
+        createUpdateTrainingButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
                 Intent intent = new Intent(mainActivity, TrainingMenuDetailActivity.class);
                 startActivity(intent);
             }

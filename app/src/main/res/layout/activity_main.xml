@@ -21,9 +21,23 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/activity_main_top_profile" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="60dp">
 
-    <include layout="@layout/activity_main_top_logs" />
+        <include layout="@layout/activity_main_top_profile" />
+
+        <include layout="@layout/activity_main_top_logs" />
+
+        <Button
+            android:id="@+id/create_update_training_menu_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_update_training_memu"/>
+    </LinearLayout>
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

@@ -2,6 +2,8 @@
     <string name="app_name">Muscle Go</string>
     <string name="action_settings">Settings</string>
 
+    <!-- HOME -->
+    <string name="create_update_training_memu">トレーニングメニュー作成・更新</string>
     <!-- トレーニングメニュー詳細 -->
     <string name="trainingmenu_detail_menu_name">トレーニングメニュー名</string>
     <string name="trainingmenu_detail_save">保存</string>
