@@ -37,8 +37,7 @@
             android:layout_height="wrap_content"
             android:text="@string/create_update_training_memu"/>
     </LinearLayout>
-
-
+    
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"

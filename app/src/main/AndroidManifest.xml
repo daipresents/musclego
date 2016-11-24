@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".settings.TrainingMenuDetailActivity" />
+        <activity android:name=".training.ExercisesActivity"></activity>
     </application>
 
 </manifest>
